@@ -1,0 +1,692 @@
+{
+    "models": [
+        {
+            "id": "a1d7cd7b-3e3e-46d6-8a47-7e598d3f4a53",
+            "name": "pin_saving_and_board_creating_at_pinterest",
+            "generator": "random(edge_coverage(100))",
+            "startElementId": "e9bee160-277a-4769-a513-66b23642d97f",
+            "variables": [
+                {
+                    "id": "isSelectedPinSaved",
+                    "type": "boolean",
+                    "min": false,
+                    "max": true
+                },
+                {
+                    "id": "createBoardModalWasOpenedFromProfile",
+                    "type": "boolean",
+                    "min": false,
+                    "max": true
+                },
+                {
+                    "id": "boardQuantity",
+                    "type": "number",
+                    "min": 0,
+                    "max": 5
+                }
+            ],
+            "actions": [
+                "isSelectedPinSaved = false",
+                "createBoardModalWasOpenedFromProfile = false",
+                "boardQuantity = 0"
+            ],
+            "edges": [
+                {
+                    "id": "943c6705-d51d-498a-a764-2d5d546616c9",
+                    "name": "click_on_unsaved_pin",
+                    "sourceVertexId": "dc59492a-5d5e-4962-8a95-18399a4d5920",
+                    "targetVertexId": "7a9ac9b1-75c2-4666-9779-0f5bf956d4f6",
+                    "input": "clickOnUnsavedPin",
+                    "output": "changePageToOpenedPin",
+                    "actions": [
+                        "isSelectedPinSaved = false"
+                    ]
+                },
+                {
+                    "id": "32de8d09-3371-4891-ab22-cd8df2c04294",
+                    "name": "click_on_board_name_plus_arrow",
+                    "sourceVertexId": "7a9ac9b1-75c2-4666-9779-0f5bf956d4f6",
+                    "targetVertexId": "c02690b6-5765-4490-9be4-b4f19f3fb61f",
+                    "input": "clickOnBoardNamePlusArrow",
+                    "output": "openSearchModal"
+                },
+                {
+                    "id": "df098810-f8e1-4293-ba8d-70a3e8e6f8cf",
+                    "name": "click_on_saved_pin",
+                    "sourceVertexId": "dc59492a-5d5e-4962-8a95-18399a4d5920",
+                    "targetVertexId": "ef32d37e-63a4-465c-a816-11f3b8f6664b",
+                    "input": "clickOnSavedPin",
+                    "output": "changePageToOpenedPin",
+                    "actions": [
+                        "isSelectedPinSaved = true"
+                    ]
+                },
+                {
+                    "id": "e3485c86-a018-42db-a8c4-617db287b0f5",
+                    "name": "click_on_board_name",
+                    "sourceVertexId": "c02690b6-5765-4490-9be4-b4f19f3fb61f",
+                    "targetVertexId": "ef32d37e-63a4-465c-a816-11f3b8f6664b",
+                    "input": "clickOnBoardName",
+                    "output": "successMsgAndBoardNameAndChangeView",
+                    "actions": [
+                        "isSelectedPinSaved = true"
+                    ]
+                },
+                {
+                    "id": "0c0c02a5-6566-4d8c-93ba-675a61b0a027",
+                    "name": "click_on_save_btn",
+                    "sourceVertexId": "c02690b6-5765-4490-9be4-b4f19f3fb61f",
+                    "targetVertexId": "ef32d37e-63a4-465c-a816-11f3b8f6664b",
+                    "input": "clickOnSaveBtn",
+                    "output": "successMsgAndBoardNameAndChangeView",
+                    "actions": [
+                        "isSelectedPinSaved = true"
+                    ]
+                },
+                {
+                    "id": "3454051b-b570-4fc0-9157-cdbb054e2ec2",
+                    "name": "click_on_saved_pin",
+                    "sourceVertexId": "7a9ac9b1-75c2-4666-9779-0f5bf956d4f6",
+                    "targetVertexId": "ef32d37e-63a4-465c-a816-11f3b8f6664b",
+                    "input": "clickOnSavedPin",
+                    "output": "changeView",
+                    "actions": [
+                        "isSelectedPinSaved = true"
+                    ]
+                },
+                {
+                    "id": "f51165d4-e473-47f4-9d06-f43e0b3bfb2c",
+                    "name": "click_on_unsaved_pin",
+                    "sourceVertexId": "ef32d37e-63a4-465c-a816-11f3b8f6664b",
+                    "targetVertexId": "7a9ac9b1-75c2-4666-9779-0f5bf956d4f6",
+                    "input": "clickOnUnSavedPin",
+                    "output": "changeView",
+                    "actions": [
+                        "isSelectedPinSaved = false"
+                    ]
+                },
+                {
+                    "id": "a8e01025-eae4-46e2-8a77-4fdd06638446",
+                    "name": "go_home",
+                    "sourceVertexId": "7a9ac9b1-75c2-4666-9779-0f5bf956d4f6",
+                    "targetVertexId": "dc59492a-5d5e-4962-8a95-18399a4d5920",
+                    "input": "clickOnHomeIcon",
+                    "output": "changePageToHome"
+                },
+                {
+                    "id": "9b220e28-da13-4819-a8a1-350e1e34152b",
+                    "name": "go_home",
+                    "sourceVertexId": "ef32d37e-63a4-465c-a816-11f3b8f6664b",
+                    "targetVertexId": "dc59492a-5d5e-4962-8a95-18399a4d5920",
+                    "input": "clickOnHomeIcon",
+                    "output": "changePageToHome"
+                },
+                {
+                    "id": "8a6311db-0607-4a68-b2cf-71d1a183357a",
+                    "name": "click_on_saved_btn",
+                    "sourceVertexId": "ef32d37e-63a4-465c-a816-11f3b8f6664b",
+                    "targetVertexId": "7a9ac9b1-75c2-4666-9779-0f5bf956d4f6",
+                    "input": "clickOnSavedBtn",
+                    "output": "changeView",
+                    "guard": "isSelectedPinSaved",
+                    "actions": [
+                        "isSelectedPinSaved = false"
+                    ]
+                },
+                {
+                    "id": "49069814-23e7-4293-a6b5-20ae2af60828",
+                    "name": "click_on_save_btn",
+                    "sourceVertexId": "7a9ac9b1-75c2-4666-9779-0f5bf956d4f6",
+                    "targetVertexId": "ef32d37e-63a4-465c-a816-11f3b8f6664b",
+                    "input": "clickOnSaveBtn",
+                    "output": "changeViewWithBoardName",
+                    "guard": "!isSelectedPinSaved",
+                    "actions": [
+                        "isSelectedPinSaved = true"
+                    ]
+                },
+                {
+                    "id": "6b6e549f-6cf3-4191-9409-884d50447a9a",
+                    "name": "type_into_search_field",
+                    "sourceVertexId": "c02690b6-5765-4490-9be4-b4f19f3fb61f",
+                    "targetVertexId": "c02690b6-5765-4490-9be4-b4f19f3fb61f",
+                    "input": "typeIntoSearchField",
+                    "output": "filteredBoards"
+                },
+                {
+                    "id": "4c5a3bf3-8f6f-4c5f-a60c-ef9674681835",
+                    "name": "click_on_profile",
+                    "sourceVertexId": "7a9ac9b1-75c2-4666-9779-0f5bf956d4f6",
+                    "targetVertexId": "ed819431-0d0f-4845-bad0-206e79bd61e9",
+                    "input": "clickOnProfileIcon",
+                    "output": "changePageToProfile"
+                },
+                {
+                    "id": "892f97d9-9af1-4637-a84c-36207a12e1bd",
+                    "name": "click_on_profile",
+                    "sourceVertexId": "dc59492a-5d5e-4962-8a95-18399a4d5920",
+                    "targetVertexId": "ed819431-0d0f-4845-bad0-206e79bd61e9",
+                    "input": "clickOnProfileIcon",
+                    "output": "changePageToProfile"
+                },
+                {
+                    "id": "d641e3d5-1a79-4709-95fa-e749594689b6",
+                    "name": "click_on_profile",
+                    "sourceVertexId": "ef32d37e-63a4-465c-a816-11f3b8f6664b",
+                    "targetVertexId": "ed819431-0d0f-4845-bad0-206e79bd61e9",
+                    "input": "clickOnProfileIcon",
+                    "output": "changePageToProfile"
+                },
+                {
+                    "id": "2bfc68e3-2f25-4ef4-8a2c-b8b877dbee7c",
+                    "name": "click_on_plus",
+                    "sourceVertexId": "ed819431-0d0f-4845-bad0-206e79bd61e9",
+                    "targetVertexId": "3046c8ee-dec1-4452-95a8-02c7e718f947",
+                    "input": "clickOnPlusIcon",
+                    "output": "openCreateSelectionList"
+                },
+                {
+                    "id": "dc3a9d58-7aa2-47bf-acff-5a395cc52b6c",
+                    "name": "click_on_board",
+                    "sourceVertexId": "3046c8ee-dec1-4452-95a8-02c7e718f947",
+                    "targetVertexId": "944e8f43-0da6-4d82-a77a-06f29418e398",
+                    "input": "clickOnBoard",
+                    "output": "openCreateBoardModal",
+                    "actions": [
+                        "createBoardModalWasOpenedFromProfile = true"
+                    ]
+                },
+                {
+                    "id": "52ccb73b-b783-4ac6-847f-e885d10253d3",
+                    "name": "enter_existing_name_and_click_on_create",
+                    "sourceVertexId": "944e8f43-0da6-4d82-a77a-06f29418e398",
+                    "targetVertexId": "944e8f43-0da6-4d82-a77a-06f29418e398",
+                    "input": "enterExistingNameAndClickOnCreate",
+                    "output": "errorMsg"
+                },
+                {
+                    "id": "91a591ae-c1b7-4b27-9f70-6ec3a7d47560",
+                    "name": "enter_non_existing_name_and_click_on_create",
+                    "sourceVertexId": "944e8f43-0da6-4d82-a77a-06f29418e398",
+                    "targetVertexId": "76a2a945-82f5-4405-b434-b857de1f3973",
+                    "input": "enterNonExistingNameAndClickOnCreate",
+                    "output": "openSavePinsModal",
+                    "guard": "createBoardModalWasOpenedFromProfile",
+                    "actions": [
+                        "boardQuantity++"
+                    ]
+                },
+                {
+                    "id": "560b730f-ac0c-481d-abc2-fa0528d6235e",
+                    "name": "click_on_save_btn",
+                    "sourceVertexId": "76a2a945-82f5-4405-b434-b857de1f3973",
+                    "targetVertexId": "76a2a945-82f5-4405-b434-b857de1f3973",
+                    "input": "clickOnSaveBtn",
+                    "output": "changeView"
+                },
+                {
+                    "id": "d5da8423-9504-4c54-ba83-c2a4160ba60d",
+                    "name": "click_on_reset_btn",
+                    "sourceVertexId": "76a2a945-82f5-4405-b434-b857de1f3973",
+                    "targetVertexId": "76a2a945-82f5-4405-b434-b857de1f3973",
+                    "input": "clickOnResetBtn",
+                    "output": "changeView"
+                },
+                {
+                    "id": "fc035dc0-48df-47f6-acc8-4fd075c8f544",
+                    "name": "click_on_done",
+                    "sourceVertexId": "76a2a945-82f5-4405-b434-b857de1f3973",
+                    "targetVertexId": "66542020-5171-4a5f-9be7-bea30b7e2934",
+                    "input": "clickOnDoneBtn",
+                    "output": "changePageToBoard"
+                },
+                {
+                    "id": "996bb35b-af92-4b19-8c3f-4f3c2df7fba1",
+                    "name": "click_on_more_ideas_btn",
+                    "sourceVertexId": "66542020-5171-4a5f-9be7-bea30b7e2934",
+                    "targetVertexId": "5679edca-db21-40c7-be3e-e90eb72ebaa0",
+                    "input": "clickOnMoreIdeasBtn",
+                    "output": "changePageToMoreIdeas"
+                },
+                {
+                    "id": "e5a2bcbf-830c-4d75-872f-5d2cc50629f8",
+                    "name": "click_on_pin_icon_btn",
+                    "sourceVertexId": "5679edca-db21-40c7-be3e-e90eb72ebaa0",
+                    "targetVertexId": "5679edca-db21-40c7-be3e-e90eb72ebaa0",
+                    "input": "clickOnPinIconBtn",
+                    "output": "changeView"
+                },
+                {
+                    "id": "9516ef96-2ed0-431a-9f0f-01959f98c43f",
+                    "name": "click_on_check_mark_btn",
+                    "sourceVertexId": "5679edca-db21-40c7-be3e-e90eb72ebaa0",
+                    "targetVertexId": "5679edca-db21-40c7-be3e-e90eb72ebaa0",
+                    "input": "clickOnCheckMarkBtn",
+                    "output": "changeView"
+                },
+                {
+                    "id": "cac26c44-c41c-429a-81c2-33c4baee317d",
+                    "name": "click_on_back_arrow_btn",
+                    "sourceVertexId": "5679edca-db21-40c7-be3e-e90eb72ebaa0",
+                    "targetVertexId": "66542020-5171-4a5f-9be7-bea30b7e2934",
+                    "input": "clickOnBackArrowBtn",
+                    "output": "changePageToBoard"
+                },
+                {
+                    "id": "9b1aefe2-7fde-4a40-98fc-a68674c1e422",
+                    "name": "click_on_new_ideas_for_this_board_panel",
+                    "sourceVertexId": "66542020-5171-4a5f-9be7-bea30b7e2934",
+                    "targetVertexId": "5679edca-db21-40c7-be3e-e90eb72ebaa0",
+                    "input": "clickOnNewIdeasForThisBoardPanel",
+                    "output": "changePageToMoreIdeas"
+                },
+                {
+                    "id": "7ba079ce-85e1-490d-86ca-2b45d32dc6bb",
+                    "name": "click_on_board",
+                    "sourceVertexId": "ed819431-0d0f-4845-bad0-206e79bd61e9",
+                    "targetVertexId": "66542020-5171-4a5f-9be7-bea30b7e2934",
+                    "input": "clickOnBoard",
+                    "output": "changePageToBoard"
+                },
+                {
+                    "id": "79d2185a-80b5-4563-8f95-7160ec3cf129",
+                    "name": "go_home",
+                    "sourceVertexId": "66542020-5171-4a5f-9be7-bea30b7e2934",
+                    "targetVertexId": "dc59492a-5d5e-4962-8a95-18399a4d5920",
+                    "input": "clickOnHomeIcon",
+                    "output": "changePageToHome"
+                },
+                {
+                    "id": "73c2ee07-881a-469e-b1f4-99b7d99d1dc3",
+                    "name": "click_on_unsaved_pin",
+                    "sourceVertexId": "7a9ac9b1-75c2-4666-9779-0f5bf956d4f6",
+                    "targetVertexId": "7a9ac9b1-75c2-4666-9779-0f5bf956d4f6",
+                    "input": "clickOnUnsavedPin",
+                    "output": "changeView",
+                    "actions": [
+                        "isSelectedPinSaved = false"
+                    ]
+                },
+                {
+                    "id": "9dc706e0-df35-41f9-8910-f23027d2c1a7",
+                    "name": "click_on_saved_pin",
+                    "sourceVertexId": "ef32d37e-63a4-465c-a816-11f3b8f6664b",
+                    "targetVertexId": "ef32d37e-63a4-465c-a816-11f3b8f6664b",
+                    "input": "clickOnSavedPin",
+                    "output": "changeView",
+                    "actions": [
+                        "isSelectedPinSaved = true"
+                    ]
+                },
+                {
+                    "id": "caadf9e4-7dab-4bb5-a0e9-2b75e05d3149",
+                    "name": "click_on_create_board",
+                    "sourceVertexId": "c02690b6-5765-4490-9be4-b4f19f3fb61f",
+                    "targetVertexId": "944e8f43-0da6-4d82-a77a-06f29418e398",
+                    "input": "clickOnCreateBoard",
+                    "output": "openCreateBoardModal",
+                    "actions": [
+                        "createBoardModalWasOpenedFromProfile = false"
+                    ]
+                },
+                {
+                    "id": "b9bc6349-e113-40f9-97f9-1c12c0194fe7",
+                    "name": "click_on_cancel",
+                    "sourceVertexId": "944e8f43-0da6-4d82-a77a-06f29418e398",
+                    "targetVertexId": "7a9ac9b1-75c2-4666-9779-0f5bf956d4f6",
+                    "input": "clickOnCancel",
+                    "output": "changePageToOpenedPin",
+                    "guard": "!createBoardModalWasOpenedFromProfile",
+                    "actions": [
+                        "isSelectedPinSaved = false"
+                    ]
+                },
+                {
+                    "id": "a48fa441-548d-471d-b798-f11a6161cb78",
+                    "name": "enter_non_existing_name_and_fill_in_the_form",
+                    "sourceVertexId": "944e8f43-0da6-4d82-a77a-06f29418e398",
+                    "targetVertexId": "ef32d37e-63a4-465c-a816-11f3b8f6664b",
+                    "input": "enterNonExistingNameAndFillInTheForm",
+                    "output": "successMsgAndCloseModal",
+                    "guard": "!createBoardModalWasOpenedFromProfile",
+                    "actions": [
+                        "isSelectedPinSaved = true",
+                        "boardQuantity++"
+                    ]
+                },
+                {
+                    "id": "82c06945-e08c-45f7-9f1c-e5f11a179bc1",
+                    "name": "click_out_of_the_modal",
+                    "sourceVertexId": "944e8f43-0da6-4d82-a77a-06f29418e398",
+                    "targetVertexId": "ed819431-0d0f-4845-bad0-206e79bd61e9",
+                    "input": "clickOutOfTheModal",
+                    "output": "closeModal",
+                    "guard": "createBoardModalWasOpenedFromProfile",
+                    "actions": [
+                        "isSelectedPinSaved = false"
+                    ]
+                },
+                {
+                    "id": "320c1c6a-46be-4dd3-9a9d-6ceb1471fafc",
+                    "name": "click_on_save",
+                    "sourceVertexId": "76a2a945-82f5-4405-b434-b857de1f3973",
+                    "targetVertexId": "76a2a945-82f5-4405-b434-b857de1f3973",
+                    "input": "clickOnSave",
+                    "output": "changeView"
+                },
+                {
+                    "id": "0de72bd4-f745-46d9-8f11-35ed2105a249",
+                    "name": "click_out_of_the_selection",
+                    "sourceVertexId": "3046c8ee-dec1-4452-95a8-02c7e718f947",
+                    "targetVertexId": "ed819431-0d0f-4845-bad0-206e79bd61e9",
+                    "input": "clickOutOfTheSelection",
+                    "output": "closeSelection"
+                },
+                {
+                    "id": "bcd9cd58-4397-4cb6-a856-ee1a3ab0ac7e",
+                    "name": "click_out_of_the_modal",
+                    "sourceVertexId": "c02690b6-5765-4490-9be4-b4f19f3fb61f",
+                    "targetVertexId": "7a9ac9b1-75c2-4666-9779-0f5bf956d4f6",
+                    "input": "clickOutOfTheModal",
+                    "output": "closeSearchModal"
+                },
+                {
+                    "id": "afab471b-20ef-469d-85f5-367261468853",
+                    "name": "click_on_board_name",
+                    "sourceVertexId": "ef32d37e-63a4-465c-a816-11f3b8f6664b",
+                    "targetVertexId": "66542020-5171-4a5f-9be7-bea30b7e2934",
+                    "input": "clickOnBoardName",
+                    "output": "changePageToBoard"
+                },
+                {
+                    "id": "3c0a4c52-20a0-43f7-851f-a5e7784c69ea",
+                    "name": "click_on_\"...\"",
+                    "sourceVertexId": "66542020-5171-4a5f-9be7-bea30b7e2934",
+                    "targetVertexId": "cc54ec59-f0cf-4514-8390-ef875797ef7d",
+                    "input": "clickOnOptions",
+                    "output": "openOptionsSelection"
+                },
+                {
+                    "id": "4b2dacb3-51ce-4e57-9409-273fa0b75023",
+                    "name": "click_on_edit",
+                    "sourceVertexId": "cc54ec59-f0cf-4514-8390-ef875797ef7d",
+                    "targetVertexId": "2f9e1bc3-1b08-4cc7-a6be-91add5f4f51a",
+                    "input": "clickOnEdit",
+                    "output": "openEditBoardModal"
+                },
+                {
+                    "id": "c3300430-e5b4-4efd-91e1-6dd22ff6cb77",
+                    "name": "click_on_done_btn",
+                    "sourceVertexId": "2f9e1bc3-1b08-4cc7-a6be-91add5f4f51a",
+                    "targetVertexId": "66542020-5171-4a5f-9be7-bea30b7e2934",
+                    "input": "clickOnDoneBtn",
+                    "output": "closeEditBoardModal"
+                },
+                {
+                    "id": "ec0e0735-5351-4083-bf5d-102ab3c2ad8b",
+                    "name": "click_on_delete",
+                    "sourceVertexId": "2f9e1bc3-1b08-4cc7-a6be-91add5f4f51a",
+                    "targetVertexId": "dcbe08c5-f092-4ea2-a979-4b1d3d8a9ddd",
+                    "input": "clickOnDelete",
+                    "output": "openUSureModal"
+                },
+                {
+                    "id": "40eaffd8-9e09-4c02-bea3-78da2bed9c30",
+                    "name": "click_on_cancel_btn",
+                    "sourceVertexId": "dcbe08c5-f092-4ea2-a979-4b1d3d8a9ddd",
+                    "targetVertexId": "2f9e1bc3-1b08-4cc7-a6be-91add5f4f51a",
+                    "input": "clickOnCancelBtn",
+                    "output": "closeUSureModal"
+                },
+                {
+                    "id": "f404ba0d-cd18-4d03-b8e6-1b7d5fac61b5",
+                    "name": "click_on_delete_btn",
+                    "sourceVertexId": "dcbe08c5-f092-4ea2-a979-4b1d3d8a9ddd",
+                    "targetVertexId": "ed819431-0d0f-4845-bad0-206e79bd61e9",
+                    "input": "clickOnDeleteBtn",
+                    "output": "successMsgAndChangePageToProfile",
+                    "actions": [
+                        "boardQuantity--"
+                    ]
+                },
+                {
+                    "id": "18bb00d4-fdfe-42c1-9638-0ec12eddb490",
+                    "name": "click_on_merge",
+                    "sourceVertexId": "cc54ec59-f0cf-4514-8390-ef875797ef7d",
+                    "targetVertexId": "8558bd74-e7fe-4948-bf49-9acbcc0fdd23",
+                    "input": "clickOnMerge",
+                    "output": "openCombineBoardModal",
+                    "guard": "boardQuantity > 1"
+                },
+                {
+                    "id": "cadf5639-0b76-4b77-9df6-aa7034e507a4",
+                    "name": "select_board_and_click_done",
+                    "sourceVertexId": "8558bd74-e7fe-4948-bf49-9acbcc0fdd23",
+                    "targetVertexId": "ed819431-0d0f-4845-bad0-206e79bd61e9",
+                    "input": "selectBoardAndClickDone",
+                    "output": "successMsgAndChangePageToProfile",
+                    "actions": [
+                        "boardQuantity--"
+                    ]
+                },
+                {
+                    "id": "210165b9-a5a8-43aa-8762-5b03d93db641",
+                    "name": "click_on_organize",
+                    "sourceVertexId": "66542020-5171-4a5f-9be7-bea30b7e2934",
+                    "targetVertexId": "17473e55-2a34-46ba-9235-43c41bdcd456",
+                    "input": "clickOnOrganize",
+                    "output": "changePageToSelectAndReorder"
+                },
+                {
+                    "id": "b2b2cb58-20b0-4429-bdaf-85e0c4224c46",
+                    "name": "click_on_back_arrow",
+                    "sourceVertexId": "17473e55-2a34-46ba-9235-43c41bdcd456",
+                    "targetVertexId": "66542020-5171-4a5f-9be7-bea30b7e2934",
+                    "input": "clickOnBackArrow",
+                    "output": "changePageToBoard"
+                },
+                {
+                    "id": "5cf8de81-73ae-405d-9cca-fafe0b6e60b8",
+                    "name": "drag_and_drop_pin",
+                    "sourceVertexId": "17473e55-2a34-46ba-9235-43c41bdcd456",
+                    "targetVertexId": "17473e55-2a34-46ba-9235-43c41bdcd456",
+                    "input": "dragAndDropPin",
+                    "output": "changesPinOrder"
+                },
+                {
+                    "id": "7461ecf1-9975-4957-8346-77fa5a392a92",
+                    "name": "click_on_close_btn",
+                    "sourceVertexId": "2f9e1bc3-1b08-4cc7-a6be-91add5f4f51a",
+                    "targetVertexId": "66542020-5171-4a5f-9be7-bea30b7e2934",
+                    "input": "clickOnCloseBtn",
+                    "output": "changePageToBoard"
+                },
+                {
+                    "id": "4ed73688-689a-47be-bb75-033861d65791",
+                    "name": "click_outside_of_modal",
+                    "sourceVertexId": "2f9e1bc3-1b08-4cc7-a6be-91add5f4f51a",
+                    "targetVertexId": "66542020-5171-4a5f-9be7-bea30b7e2934",
+                    "input": "clickOutsideOfModal",
+                    "output": "changePageToBoard"
+                },
+                {
+                    "id": "065d3747-60ae-4771-aea3-ad18d42919df",
+                    "name": "click_outside_of_modal",
+                    "sourceVertexId": "dcbe08c5-f092-4ea2-a979-4b1d3d8a9ddd",
+                    "targetVertexId": "2f9e1bc3-1b08-4cc7-a6be-91add5f4f51a",
+                    "input": "clickOutsideOfModal",
+                    "output": "closeUSureModal"
+                },
+                {
+                    "id": "97fd1d8d-dccd-4633-80ee-c1e8c346fc2b",
+                    "name": "enter_existing_name_and_click_on_done",
+                    "sourceVertexId": "2f9e1bc3-1b08-4cc7-a6be-91add5f4f51a",
+                    "targetVertexId": "2f9e1bc3-1b08-4cc7-a6be-91add5f4f51a",
+                    "input": "enterExistingNameAndClickOnDone",
+                    "output": "errorMsg"
+                },
+                {
+                    "id": "17f3261b-8560-4290-adf6-84f2dfaef525",
+                    "name": "click_outside_of_modal",
+                    "sourceVertexId": "8558bd74-e7fe-4948-bf49-9acbcc0fdd23",
+                    "targetVertexId": "cc54ec59-f0cf-4514-8390-ef875797ef7d",
+                    "input": "clickOutsideOfModal",
+                    "output": "closeCombineBoardsModal"
+                },
+                {
+                    "id": "37f96824-072b-4620-bd07-1958c73bd854",
+                    "name": "click_on_close_btn",
+                    "sourceVertexId": "8558bd74-e7fe-4948-bf49-9acbcc0fdd23",
+                    "targetVertexId": "cc54ec59-f0cf-4514-8390-ef875797ef7d",
+                    "input": "clickOnCloseBtn",
+                    "output": "closeCombineBoardsModal"
+                },
+                {
+                    "id": "cd16567f-9c7d-4f9a-bd0d-ad741c6814b5",
+                    "name": "start_actions",
+                    "sourceVertexId": "e9bee160-277a-4769-a513-66b23642d97f",
+                    "targetVertexId": "dc59492a-5d5e-4962-8a95-18399a4d5920",
+                    "input": "",
+                    "output": "",
+                    "actions": [
+                        "isSelectedPinSaved = false",
+                        "createBoardModalWasOpenedFromProfile = false",
+                        "boardQuantity = 0"
+                    ]
+                }
+            ],
+            "vertices": [
+                {
+                    "id": "dc59492a-5d5e-4962-8a95-18399a4d5920",
+                    "name": "home_page",
+                    "properties": {
+                        "x": 103.07900211696938,
+                        "y": -6.083275543199
+                    }
+                },
+                {
+                    "id": "7a9ac9b1-75c2-4666-9779-0f5bf956d4f6",
+                    "name": "opened_unsaved_pin",
+                    "properties": {
+                        "x": -284.99999999999955,
+                        "y": 242.00000000000017
+                    }
+                },
+                {
+                    "id": "c02690b6-5765-4490-9be4-b4f19f3fb61f",
+                    "name": "search_in_boards_modal",
+                    "properties": {
+                        "x": -460.3288287465663,
+                        "y": 532.5131670194949
+                    }
+                },
+                {
+                    "id": "ef32d37e-63a4-465c-a816-11f3b8f6664b",
+                    "name": "opened_saved_pin",
+                    "properties": {
+                        "x": 282.99999999999994,
+                        "y": 221.00000000000006
+                    }
+                },
+                {
+                    "id": "ed819431-0d0f-4845-bad0-206e79bd61e9",
+                    "name": "profile",
+                    "properties": {
+                        "x": 541.0659483052633,
+                        "y": 15.551546676246687
+                    }
+                },
+                {
+                    "id": "3046c8ee-dec1-4452-95a8-02c7e718f947",
+                    "name": "create_selection",
+                    "properties": {
+                        "x": 532.0659483052627,
+                        "y": 359.5515466762471
+                    }
+                },
+                {
+                    "id": "76a2a945-82f5-4405-b434-b857de1f3973",
+                    "name": "save_new_pins_modal",
+                    "properties": {
+                        "x": 682.40759733052,
+                        "y": 475.35438812462894
+                    }
+                },
+                {
+                    "id": "944e8f43-0da6-4d82-a77a-06f29418e398",
+                    "name": "create_board_modal",
+                    "properties": {
+                        "x": 80.92573125785418,
+                        "y": 601.6390956456764
+                    }
+                },
+                {
+                    "id": "66542020-5171-4a5f-9be7-bea30b7e2934",
+                    "name": "board_page",
+                    "properties": {
+                        "x": 884.0132802272824,
+                        "y": 144.52521263725703
+                    }
+                },
+                {
+                    "id": "5679edca-db21-40c7-be3e-e90eb72ebaa0",
+                    "name": "more_ideas_page",
+                    "properties": {
+                        "x": 797.9257312578537,
+                        "y": 695.3629349770891
+                    }
+                },
+                {
+                    "id": "cc54ec59-f0cf-4514-8390-ef875797ef7d",
+                    "name": "board_options_selection",
+                    "properties": {
+                        "x": 1379.2327329246773,
+                        "y": 522.1658576047884
+                    }
+                },
+                {
+                    "id": "2f9e1bc3-1b08-4cc7-a6be-91add5f4f51a",
+                    "name": "edit_board_modal",
+                    "properties": {
+                        "x": 1236,
+                        "y": 293
+                    }
+                },
+                {
+                    "id": "dcbe08c5-f092-4ea2-a979-4b1d3d8a9ddd",
+                    "name": "u_sure_to_delete_modal",
+                    "properties": {
+                        "x": 1107,
+                        "y": 60
+                    }
+                },
+                {
+                    "id": "8558bd74-e7fe-4948-bf49-9acbcc0fdd23",
+                    "name": "combine_board_modal",
+                    "properties": {
+                        "x": 1307,
+                        "y": -14
+                    }
+                },
+                {
+                    "id": "17473e55-2a34-46ba-9235-43c41bdcd456",
+                    "name": "select_and_reorder_page",
+                    "properties": {
+                        "x": 1061.4868329805051,
+                        "y": 471.40783086353593
+                    }
+                },
+                {
+                    "id": "e9bee160-277a-4769-a513-66b23642d97f",
+                    "name": "start_state",
+                    "properties": {
+                        "x": -81,
+                        "y": -103
+                    }
+                }
+            ]
+        }
+    ],
+    "selectedModelIndex": 0,
+    "selectedElementId": null
+}
